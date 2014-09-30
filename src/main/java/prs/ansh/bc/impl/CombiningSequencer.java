@@ -7,6 +7,14 @@ import java.util.List;
 
 import prs.ansh.bc.CountSequencer;
 
+/**
+ * Basically holds a sequence of sequencers itself. This way it can be used
+ * to output a sequence of individual sequencer generated sequences. A separator
+ * is used join the constituent sequences.
+ * 
+ * @param <T> type of the output sequence-element
+ * @param <V> type of the input value
+ */
 public class CombiningSequencer<T, V> {
 
 	private final List<CountSequencer<T>> sequencers;

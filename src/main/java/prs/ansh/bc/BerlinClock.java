@@ -2,6 +2,10 @@ package prs.ansh.bc;
 
 import prs.ansh.bc.exception.BasicParseException;
 
+/**
+ * The Berlin clock. Contains interfaces for conversions to/from etc
+ *
+ */
 public interface BerlinClock {
 
 	/**

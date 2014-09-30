@@ -6,9 +6,19 @@ import java.util.List;
 
 import prs.ansh.bc.CountSequencer;
 
+/**
+ * Converts a count to a fixed size sequence. The sequence is formed
+ * by prefixing part of a pre-cached sequence and filling the rest with
+ * a supplied filler element. How much of the pre-cached sequence is
+ * used depends on the count passed in.
+ * 
+ * @param <T> type of sequence-element
+ */
 public class BoundedCountSequencerImpl<T> implements CountSequencer<T> {
 
+	/**  The pre-cached sequence */
 	final List<T> reserve;
+	/**  Filler element */
 	final T fillerElement;
 
 	public BoundedCountSequencerImpl(List<T> reserve, T fillerElement) {
@@ -16,6 +26,12 @@ public class BoundedCountSequencerImpl<T> implements CountSequencer<T> {
 		this.fillerElement = fillerElement;
 	}
 
+	/**
+	 * Output a fixed-size <code>reserve.size()</code> sequence taking the first
+	 * <b>count</b> elements of the pre-cached sequence and filling the rest with
+	 * the fillerElement. If the fillerElement was set as null, return an empty
+	 * sequence
+	 */
 	@Override
 	public List<T> generateSequence(final int count) {
 		int n = reserve.size();
