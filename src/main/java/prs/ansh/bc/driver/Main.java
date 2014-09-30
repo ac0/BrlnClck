@@ -22,7 +22,7 @@ public class Main {
 				try {
 					System.out.println(berlinClock.getDisplayLine(hhMMSs));
 				} catch (Exception e) {
-					System.out.println("Error: " + e.getClass().getName());
+					System.out.println("Error: " + e.getMessage());
 				}
 				hhMMSs = br.readLine();
 			}

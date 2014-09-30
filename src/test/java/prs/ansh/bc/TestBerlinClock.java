@@ -69,4 +69,29 @@ public class TestBerlinClock {
 		bClck.getDisplayLine("25:05:01");
 	}
 	
+	@Test
+	public void testInvocationOnValidSecondsBoundary(){
+		bClck.getDisplayLine("22:05:59");
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testInvocationOnInValidSecondsBoundary(){
+		bClck.getDisplayLine("22:05:60");
+	}
+	
+	@Test
+	public void testInvocationOnValidMinutesBoundary(){
+		bClck.getDisplayLine("22:59:59");
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testInvocationOnInValidMinutesBoundary(){
+		bClck.getDisplayLine("22:60:59");
+	}
+	
+	@Test(expected = BasicParseException.class)
+	public void testInvocationOnNegativeHour(){
+		bClck.getDisplayLine("-2:05:30");
+	}
+	
 }

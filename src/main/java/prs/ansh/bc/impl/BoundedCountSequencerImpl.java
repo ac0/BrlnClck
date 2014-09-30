@@ -17,12 +17,16 @@ public class BoundedCountSequencerImpl<T> implements CountSequencer<T> {
 	}
 
 	@Override
-	public List<T> generateSequence(int count) {
+	public List<T> generateSequence(final int count) {
+		int n = reserve.size();
+		if(count > n){
+			throw new IndexOutOfBoundsException("Overflow: out of range");
+		}
+		
 		if (fillerElement == null) {
 			return Collections.emptyList();
 		}
 
-		int n = reserve.size();
 		List<T> genList = new ArrayList<>(n);
 		genList.addAll(reserve.subList(0, count));
 		n -= count;

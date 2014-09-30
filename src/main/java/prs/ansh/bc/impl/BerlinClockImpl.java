@@ -40,7 +40,7 @@ public class BerlinClockImpl implements BerlinClock {
 	public String getDisplayLine(String hhMmSs) throws BasicParseException {
 		Matcher matcher = PAT_HHMMSS.matcher(hhMmSs);
 		if (!matcher.matches()) {
-			throw new BasicParseException();
+			throw new BasicParseException("Must be in the format 99:99:99");
 		}
 
 		int secs = Integer.parseInt(matcher.group(3));
