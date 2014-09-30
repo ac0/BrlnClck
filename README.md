@@ -5,8 +5,9 @@ Simple berlin clock conversion demo
 
 Berlin clock legal boundaries:
 - Y OOOO OOOO OOOOOOOOOOO OOOO (00:00:00) >> ... >> O RRRR RRRR YYRYYRYYRYY YYYY (24:59:59)
+- External interface prs.ansh.bc.BerlinClock further details the spec
 
-Version: Java 7
+Java Version: 7
 
 Main class: prs.ansh.bc.driver.Main
 - Repeatedly reads HH:MM:SS lines from stdin and writes in the above berlin clock text format to stdout
